@@ -1,0 +1,77 @@
+@use '../styles/tokens' as *;
+@use '../styles/breakpoints' as *;
+
+.footer {
+  background: token('color', 'surface');
+  border-top: 1px solid token('color', 'border');
+  margin-top: token('space', 'xl');
+
+  &__inner {
+    @include container;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: token('space', 'md');
+    padding-block: token('space', 'lg');
+
+    @include md {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: token('space', 'sm');
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__socials {
+    display: flex;
+    gap: token('space', 'sm');
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    a {
+      display: inline-flex;
+      width: 36px;
+      height: 36px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: token('color', 'accent');
+      color: token('color', 'accent-contrast');
+
+      &:hover {
+        background: token('color', 'primary');
+        color: token('color', 'primary-contrast');
+      }
+    }
+  }
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+  }
+}
+
+.pill-link {
+  display: inline-block;
+  padding: token('space', 'xs') token('space', 'md');
+  border-radius: token('radius', 'pill');
+  background: token('color', 'accent');
+  color: token('color', 'accent-contrast');
+  font-size: token('font', 'sm');
+  text-decoration: none;
+  transition: background 0.15s;
+
+  &:hover {
+    background: token('color', 'primary');
+    color: token('color', 'primary-contrast');
+  }
+}

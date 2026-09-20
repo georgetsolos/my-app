@@ -1,0 +1,110 @@
+@use '../styles/tokens' as *;
+@use '../styles/breakpoints' as *;
+
+.carousel {
+  &__inner {
+    @include container;
+    padding-block: token('space', 'xl');
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: token('space', 'md');
+    margin-bottom: token('space', 'lg');
+  }
+
+  &__title {
+    margin: 0;
+    font-size: token('font', 'xl');
+
+    @include md {
+      font-size: token('font', '2xl');
+    }
+  }
+
+  &__controls {
+    display: flex;
+    gap: token('space', 'sm');
+  }
+
+  &__btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid token('color', 'border');
+    background: token('color', 'surface');
+    color: token('color', 'text');
+    font-size: token('font', 'lg');
+    cursor: pointer;
+    transition:
+      background 0.15s,
+      color 0.15s,
+      border-color 0.15s;
+
+    &:hover {
+      background: token('color', 'primary');
+      border-color: token('color', 'primary');
+      color: token('color', 'primary-contrast');
+    }
+  }
+
+  &__track {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: token('space', 'md');
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__slide {
+    flex: 0 0 85%;
+    scroll-snap-align: start;
+
+    @include md {
+      flex: 0 0 48%;
+    }
+
+    @include lg {
+      flex: 0 0 32%;
+    }
+  }
+}
+
+.carousel-card {
+  background: token('color', 'surface');
+  border-radius: token('radius', 'lg');
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(30, 33, 64, 0.06);
+
+  &__img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__body {
+    padding: token('space', 'md');
+  }
+
+  &__title {
+    margin: 0 0 token('space', 'xs');
+    font-size: token('font', 'lg');
+  }
+
+  &__meta {
+    margin: 0;
+    color: token('color', 'text-muted');
+    font-size: token('font', 'sm');
+  }
+}
