@@ -1,0 +1,59 @@
+@use '../styles/tokens' as *;
+@use '../styles/breakpoints' as *;
+
+.leaderboard {
+  &__inner {
+    @include container;
+    padding-block: token('space', 'xl');
+  }
+
+  &__title {
+    margin: 0 0 token('space', 'lg');
+    font-size: token('font', 'xl');
+
+    @include md {
+      font-size: token('font', '2xl');
+    }
+  }
+
+  &__wrap {
+    overflow-x: auto;
+    border: 1px solid token('color', 'border');
+    border-radius: token('radius', 'lg');
+    background: token('color', 'surface');
+  }
+
+  &__caption {
+    text-align: left;
+    padding: token('space', 'md');
+    color: token('color', 'text-muted');
+    font-size: token('font', 'sm');
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 480px;
+
+    th,
+    td {
+      text-align: left;
+      padding: token('space', 'md');
+      border-bottom: 1px solid token('color', 'border');
+      font-size: token('font', 'sm');
+    }
+
+    th {
+      background: token('color', 'surface-alt');
+      font-weight: 600;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    tbody tr:hover {
+      background: token('color', 'surface-alt');
+    }
+  }
+}

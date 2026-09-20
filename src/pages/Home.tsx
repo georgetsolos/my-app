@@ -1,6 +1,8 @@
 import './Home.scss';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Carousel from '../components/Carousel';
+import Leaderboard from '../components/Leaderboard';
 import { games } from '../data/games';
 
 type Props = { onSignIn: () => void };
@@ -17,23 +19,39 @@ export default function Home({ onSignIn }: Props) {
             <p className="hero__subtitle">
               Discover cozy, indie, and classic games — curated for you.
             </p>
-            <button className="btn btn--primary">Browse library</button>
+            <button className="btn btn--primary" type="button">
+              Browse library
+            </button>
           </div>
-          <img className="hero__art" src="/src/assets/hero.png" alt="" aria-hidden="true" />
+          <img
+            className="hero__art"
+            src="/src/assets/hero.png"
+            alt=""
+            aria-hidden="true"
+          />
         </div>
       </section>
+
+      <Carousel />
 
       <section className="filters">
         <div className="filters__inner">
           <ul className="filters__chips">
             {['All', 'Puzzle', 'Adventure', 'Arcade', 'Strategy'].map((c, i) => (
               <li key={c}>
-                <button className={`chip${i === 0 ? ' chip--active' : ''}`}>{c}</button>
+                <button
+                  className={`chip${i === 0 ? ' chip--active' : ''}`}
+                  type="button"
+                >
+                  {c}
+                </button>
               </li>
             ))}
           </ul>
           <div className="filters__sort">
-            <button className="sort-btn">Start by Rating <span aria-hidden="true">▾</span></button>
+            <button className="sort-btn" type="button">
+              Start by Rating <span aria-hidden="true">▾</span>
+            </button>
           </div>
         </div>
       </section>
@@ -46,13 +64,17 @@ export default function Home({ onSignIn }: Props) {
                 <img className="game-card__img" src={g.cardImage} alt="" />
                 <div className="game-card__body">
                   <h3 className="game-card__title">{g.title}</h3>
-                  <p className="game-card__meta">★ {g.rating.toFixed(1)} · {g.category}</p>
+                  <p className="game-card__meta">
+                    ★ {g.rating.toFixed(1)} · {g.category}
+                  </p>
                 </div>
               </li>
             ))}
           </ul>
         </div>
       </section>
+
+      <Leaderboard />
 
       <Footer />
     </main>
