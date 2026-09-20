@@ -26,33 +26,46 @@ export default function AuthDialog({ open, mode, onModeChange, onClose }: Props)
       ref={ref}
       className="auth"
       onClose={onClose}
-      onClick={(e) => { if (e.target === ref.current) onClose(); }}
+      onClick={(e) => {
+        if (e.target === ref.current) onClose();
+      }}
     >
       <form className="auth__panel" method="dialog">
-        <button type="button" className="auth__close" onClick={onClose} aria-label="Close">×</button>
+        <button
+          type="button"
+          className="auth__close"
+          onClick={onClose}
+          aria-label="Close dialog"
+        >
+          ×
+        </button>
 
         <div className="auth__tabs" role="tablist">
           <button
             role="tab"
+            type="button"
             aria-selected={mode === 'signin'}
             className={`auth__tab${mode === 'signin' ? ' is-active' : ''}`}
             onClick={() => onModeChange('signin')}
-            type="button"
-          >Login</button>
+          >
+            Login
+          </button>
           <button
             role="tab"
+            type="button"
             aria-selected={mode === 'signup'}
             className={`auth__tab${mode === 'signup' ? ' is-active' : ''}`}
             onClick={() => onModeChange('signup')}
-            type="button"
-          >Register</button>
+          >
+            Register
+          </button>
         </div>
 
-        <div className="auth__fields">
+        <div className="auth__fields" key={mode}>
           {mode === 'signup' && (
             <label className="field">
               <span className="field__label">Name</span>
-              <input className="field__input" type="text" required />
+              <input className="field__input" type="text" autoComplete="name" required />
             </label>
           )}
 
@@ -66,16 +79,24 @@ export default function AuthDialog({ open, mode, onModeChange, onClose }: Props)
               onChange={(e) => setEmail(e.target.value)}
               onBlur={() => setTouched(true)}
               aria-invalid={emailInvalid}
+              autoComplete="email"
               required
             />
             {emailInvalid && (
-              <span className="field__error">Please enter a valid email address</span>
+              <span className="field__error">
+                Please enter a valid email address
+              </span>
             )}
           </label>
 
           <label className="field">
             <span className="field__label">Password</span>
-            <input className="field__input" type="password" required />
+            <input
+              className="field__input"
+              type="password"
+              autoComplete={mode === 'signin' ? 'current-password' : 'new-password'}
+              required
+            />
           </label>
         </div>
 
