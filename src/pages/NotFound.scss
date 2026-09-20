@@ -1,0 +1,19 @@
+@use '../styles/tokens' as *;
+@use '../styles/breakpoints' as *;
+@use '../styles/button';
+
+.not-found {
+  @include container;
+  padding-block: token('space', '2xl');
+  text-align: center;
+
+  &__title {
+    margin: 0 0 token('space', 'md');
+    font-size: token('font', '3xl');
+  }
+
+  &__text {
+    margin: 0 0 token('space', 'lg');
+    color: token('color', 'text-muted');
+  }
+}

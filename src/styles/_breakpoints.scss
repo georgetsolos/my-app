@@ -1,0 +1,20 @@
+@use 'tokens' as *;
+
+@mixin md {
+  @media (min-width: token('breakpoint', 'md')) { @content; }
+}
+
+@mixin lg {
+  @media (min-width: token('breakpoint', 'lg')) { @content; }
+}
+
+@mixin container {
+  width: 100%;
+  max-width: token('container', 'max');
+  margin: 0 auto;
+  padding-inline: token('container', 'pad-mobile');
+
+  @include lg {
+    padding-inline: token('container', 'pad-desktop');
+  }
+}

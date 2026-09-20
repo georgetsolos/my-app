@@ -1,0 +1,105 @@
+@use '../styles/tokens' as *;
+@use '../styles/breakpoints' as *;
+@use '../styles/button';
+
+.auth {
+  border: 0; padding: 0; background: transparent;
+  max-width: 100vw; max-height: 100vh;
+
+  &::backdrop { background: rgba(30,33,64,.5); }
+
+  &__panel {
+    position: relative;
+    width: 100vw; height: 100vh;
+    background: token('color', 'bg');
+    padding: token('space', 'lg');
+    display: flex; flex-direction: column;
+    gap: token('space', 'lg');
+    overflow-y: auto;
+  }
+
+  @include md {
+    &__panel {
+      width: min(440px, 90vw);
+      height: auto;
+      margin: auto;
+      border-radius: token('radius', 'lg');
+      padding: token('space', 'xl');
+      box-shadow: 0 24px 60px rgba(30,33,64,.20);
+    }
+  }
+
+  &__close {
+    position: absolute; top: token('space', 'sm'); right: token('space', 'sm');
+    width: 40px; height: 40px; border-radius: 50%;
+    border: 0; background: transparent; font-size: 1.5rem;
+    cursor: pointer; color: token('color', 'text-muted');
+
+    &:hover { background: token('color', 'surface-alt'); }
+  }
+
+  &__tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: token('color', 'accent');
+    border-radius: token('radius', 'pill');
+    padding: 4px;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  &__tab {
+    font: inherit;
+    font-weight: 600;
+    padding: token('space', 'xs') token('space', 'md');
+    border: 0;
+    background: transparent;
+    color: token('color', 'accent-contrast');
+    border-radius: token('radius', 'pill');
+    cursor: pointer;
+
+    &.is-active {
+      background: token('color', 'surface');
+      color: token('color', 'text');
+    }
+  }
+
+  &__fields { display: flex; flex-direction: column; gap: token('space', 'md'); }
+
+  &__submit { width: 100%; }
+}
+
+.field {
+  display: flex; flex-direction: column; gap: token('space', 'xs');
+
+  &__label { font-size: token('font', 'sm'); font-weight: 500; }
+
+  &__input {
+    font: inherit;
+    padding: token('space', 'sm') token('space', 'md');
+    border: 1px solid token('color', 'border');
+    border-radius: token('radius', 'md');
+    background: token('color', 'surface');
+    color: token('color', 'text');
+    transition: border-color .15s, box-shadow .15s;
+
+    &::placeholder { color: token('color', 'text-muted'); }
+
+    &:focus-visible {
+      outline: none;
+      border-color: token('color', 'accent');
+      box-shadow: 0 0 0 3px rgba(30,33,64,.15);
+    }
+
+    &[aria-invalid="true"] {
+      border-color: token('color', 'error');
+      background: token('color', 'error-bg');
+    }
+  }
+
+  &__error {
+    color: token('color', 'error');
+    font-size: token('font', 'xs');
+  }
+}

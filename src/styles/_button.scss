@@ -1,0 +1,24 @@
+@use 'tokens' as *;
+
+.btn {
+  font: inherit;
+  font-weight: 500;
+  padding: token('space', 'sm') token('space', 'md');
+  border-radius: token('radius', 'pill');
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color .15s ease, color .15s ease;
+
+  &--primary {
+    background: token('color', 'primary');
+    color: token('color', 'primary-contrast');
+    &:hover { background: token('color', 'primary-hover'); }
+  }
+
+  &--ghost {
+    background: transparent;
+    color: token('color', 'accent');
+    border-color: token('color', 'accent');
+    &:hover { background: token('color', 'accent'); color: token('color', 'accent-contrast'); }
+  }
+}
