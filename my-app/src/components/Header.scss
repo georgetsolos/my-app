@@ -1,0 +1,58 @@
+@use '../styles/tokens' as *;
+@use '../styles/breakpoints' as *;
+@use '../styles/button';
+
+.header {
+  background: token('color', 'bg');
+  border-bottom: 1px solid token('color', 'border');
+
+  &__inner {
+    @include container;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: token('space', 'md');
+    padding-block: token('space', 'md');
+  }
+
+  &__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: token('space', 'xs');
+    font-weight: 700;
+    font-size: token('font', 'lg');
+    color: token('color', 'text');
+    text-decoration: none;
+  }
+
+  &__nav,
+  &__actions > .btn,
+  &__user { display: none; }
+
+  &__burger {
+    background: none; border: 0; font-size: 1.5rem;
+    color: token('color', 'text'); cursor: pointer;
+  }
+
+  @include md {
+    &__nav {
+      display: flex;
+      gap: token('space', 'lg');
+      font-size: token('font', 'sm');
+
+      a {
+        color: token('color', 'text');
+        text-decoration: none;
+        &:hover { color: token('color', 'accent-hover'); }
+      }
+    }
+
+    &__actions > .btn--primary { display: inline-flex; }
+  }
+
+  @include lg {
+    &__actions > .btn { display: inline-flex; }
+    &__user { display: inline-flex; }
+    &__burger { display: none; }
+  }
+}

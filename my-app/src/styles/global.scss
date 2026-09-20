@@ -1,0 +1,23 @@
+@use 'tokens' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: token('font', 'base');
+  color: token('color', 'text');
+  background: token('color', 'bg');
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
