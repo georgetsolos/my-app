@@ -16,7 +16,10 @@ export default function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home onSignIn={() => openAuth('signin')} />} />
+        <Route
+          path="/"
+          element={<Home onSignIn={() => openAuth('signin')} />}
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
 

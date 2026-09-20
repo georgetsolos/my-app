@@ -42,11 +42,7 @@ export default function Carousel() {
           {featured.map((g) => (
             <li key={g.id} className="carousel__slide">
               <article className="carousel-card">
-                <img
-                  className="carousel-card__img"
-                  src={g.heroImage}
-                  alt=""
-                />
+                <img className="carousel-card__img" src={g.heroImage} alt="" />
                 <div className="carousel-card__body">
                   <h3 className="carousel-card__title">{g.title}</h3>
                   <p className="carousel-card__meta">

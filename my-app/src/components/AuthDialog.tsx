@@ -8,7 +8,12 @@ type Props = {
   onClose: () => void;
 };
 
-export default function AuthDialog({ open, mode, onModeChange, onClose }: Props) {
+export default function AuthDialog({
+  open,
+  mode,
+  onModeChange,
+  onClose,
+}: Props) {
   const ref = useRef<HTMLDialogElement>(null);
   const [email, setEmail] = useState('');
   const [touched, setTouched] = useState(false);
@@ -65,7 +70,12 @@ export default function AuthDialog({ open, mode, onModeChange, onClose }: Props)
           {mode === 'signup' && (
             <label className="field">
               <span className="field__label">Name</span>
-              <input className="field__input" type="text" autoComplete="name" required />
+              <input
+                className="field__input"
+                type="text"
+                autoComplete="name"
+                required
+              />
             </label>
           )}
 
@@ -94,7 +104,9 @@ export default function AuthDialog({ open, mode, onModeChange, onClose }: Props)
             <input
               className="field__input"
               type="password"
-              autoComplete={mode === 'signin' ? 'current-password' : 'new-password'}
+              autoComplete={
+                mode === 'signin' ? 'current-password' : 'new-password'
+              }
               required
             />
           </label>

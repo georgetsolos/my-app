@@ -16,15 +16,15 @@ const meta: Record<string, { rating: number; category: string }> = {
   'cat-mail-co': { rating: 4.3, category: 'Simulation' },
   'cozy-solitaire': { rating: 4.6, category: 'Card' },
   'cozy-sudoku': { rating: 4.5, category: 'Puzzle' },
-  'grimshire': { rating: 4.1, category: 'RPG' },
-  'heartopia': { rating: 4.7, category: 'Cozy' },
+  grimshire: { rating: 4.1, category: 'RPG' },
+  heartopia: { rating: 4.7, category: 'Cozy' },
   'islanders-new-shores': { rating: 4.4, category: 'Strategy' },
-  'koroneko': { rating: 4.2, category: 'Puzzle' },
+  koroneko: { rating: 4.2, category: 'Puzzle' },
   'leaf-it-alone': { rating: 4.3, category: 'Cozy' },
   'leafy-corner': { rating: 4.5, category: 'Simulation' },
   'little-corners': { rating: 4.4, category: 'Puzzle' },
   'organized-inside': { rating: 4.6, category: 'Puzzle' },
-  'palia': { rating: 4.5, category: 'Simulation' },
+  palia: { rating: 4.5, category: 'Simulation' },
   'shelve-the-potions': { rating: 4.3, category: 'Puzzle' },
   'tailside-cozy-cafe-sim': { rating: 4.2, category: 'Simulation' },
   'the-wild-at-heart': { rating: 4.6, category: 'Adventure' },
@@ -33,7 +33,7 @@ const meta: Record<string, { rating: number; category: string }> = {
   'vacation-cafe-simulator': { rating: 4.1, category: 'Simulation' },
   'whisper-of-the-house': { rating: 4.5, category: 'Adventure' },
   'winter-burrow': { rating: 4.3, category: 'Cozy' },
-  'wytchwood': { rating: 4.6, category: 'Adventure' },
+  wytchwood: { rating: 4.6, category: 'Adventure' },
 };
 
 const slugs = Object.keys(meta);

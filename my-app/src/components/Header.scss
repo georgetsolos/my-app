@@ -67,7 +67,9 @@
     transform: translateY(-8px);
     opacity: 0;
     pointer-events: none;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      opacity 0.2s ease;
     z-index: 1;
 
     &.is-open {
