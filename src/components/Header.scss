@@ -5,6 +5,7 @@
 .header {
   background: token('color', 'bg');
   border-bottom: 1px solid token('color', 'border');
+  position: relative;
 
   &__inner {
     @include container;
@@ -23,15 +24,79 @@
     font-size: token('font', 'lg');
     color: token('color', 'text');
     text-decoration: none;
+    z-index: 2;
   }
 
   &__nav,
   &__actions > .btn,
-  &__user { display: none; }
+  &__user {
+    display: none;
+  }
 
   &__burger {
-    background: none; border: 0; font-size: 1.5rem;
-    color: token('color', 'text'); cursor: pointer;
+    background: none;
+    border: 0;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: token('color', 'text');
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: token('radius', 'sm');
+    z-index: 2;
+
+    &:hover {
+      background: token('color', 'surface-alt');
+    }
+  }
+
+  &__drawer {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: token('color', 'bg');
+    border-bottom: 1px solid token('color', 'border');
+    display: flex;
+    flex-direction: column;
+    gap: token('space', 'lg');
+    padding: token('space', 'lg');
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    z-index: 1;
+
+    &.is-open {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  &__drawer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: token('space', 'md');
+    font-size: token('font', 'lg');
+
+    a {
+      color: token('color', 'text');
+      text-decoration: none;
+
+      &:hover {
+        color: token('color', 'accent-hover');
+      }
+    }
+  }
+
+  &__drawer-actions {
+    display: flex;
+    flex-direction: column;
+    gap: token('space', 'sm');
   }
 
   @include md {
@@ -43,16 +108,33 @@
       a {
         color: token('color', 'text');
         text-decoration: none;
-        &:hover { color: token('color', 'accent-hover'); }
+
+        &:hover {
+          color: token('color', 'accent-hover');
+        }
       }
     }
 
-    &__actions > .btn--primary { display: inline-flex; }
+    &__actions > .btn--primary {
+      display: inline-flex;
+    }
   }
 
   @include lg {
-    &__actions > .btn { display: inline-flex; }
-    &__user { display: inline-flex; }
-    &__burger { display: none; }
+    &__actions > .btn {
+      display: inline-flex;
+    }
+
+    &__user {
+      display: inline-flex;
+    }
+
+    &__burger {
+      display: none;
+    }
+
+    &__drawer {
+      display: none;
+    }
   }
 }
