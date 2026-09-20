@@ -38,16 +38,18 @@ export default function Home({ onSignIn }: Props) {
       <section className="filters">
         <div className="filters__inner">
           <ul className="filters__chips">
-            {['All', 'Puzzle', 'Adventure', 'Arcade', 'Strategy'].map((c, i) => (
-              <li key={c}>
-                <button
-                  className={`chip${i === 0 ? ' chip--active' : ''}`}
-                  type="button"
-                >
-                  {c}
-                </button>
-              </li>
-            ))}
+            {['All', 'Puzzle', 'Adventure', 'Arcade', 'Strategy'].map(
+              (c, i) => (
+                <li key={c}>
+                  <button
+                    className={`chip${i === 0 ? ' chip--active' : ''}`}
+                    type="button"
+                  >
+                    {c}
+                  </button>
+                </li>
+              )
+            )}
           </ul>
           <div className="filters__sort">
             <button className="sort-btn" type="button">

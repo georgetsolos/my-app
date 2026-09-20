@@ -1,11 +1,15 @@
 @use 'tokens' as *;
 
 @mixin md {
-  @media (min-width: token('breakpoint', 'md')) { @content; }
+  @media (min-width: token('breakpoint', 'md')) {
+    @content;
+  }
 }
 
 @mixin lg {
-  @media (min-width: token('breakpoint', 'lg')) { @content; }
+  @media (min-width: token('breakpoint', 'lg')) {
+    @content;
+  }
 }
 
 @mixin container {

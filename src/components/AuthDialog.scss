@@ -97,7 +97,9 @@
     color: token('color', 'accent-contrast');
     border-radius: token('radius', 'pill');
     cursor: pointer;
-    transition: background 0.2s ease, color 0.2s ease;
+    transition:
+      background 0.2s ease,
+      color 0.2s ease;
 
     &.is-active {
       background: token('color', 'surface');
@@ -134,7 +136,9 @@
     border-radius: token('radius', 'md');
     background: token('color', 'surface');
     color: token('color', 'text');
-    transition: border-color 0.15s, box-shadow 0.15s;
+    transition:
+      border-color 0.15s,
+      box-shadow 0.15s;
 
     &::placeholder {
       color: token('color', 'text-muted');

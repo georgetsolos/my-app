@@ -20,7 +20,9 @@
   &__title {
     margin: 0 0 token('space', 'md');
     font-size: token('font', '2xl');
-    @include md { font-size: token('font', '3xl'); }
+    @include md {
+      font-size: token('font', '3xl');
+    }
   }
 
   &__subtitle {
@@ -32,7 +34,9 @@
     width: 100%;
     border-radius: token('radius', 'lg');
     order: -1;
-    @include lg { order: 0; }
+    @include lg {
+      order: 0;
+    }
   }
 }
 
@@ -55,7 +59,9 @@
     display: flex;
     flex-wrap: wrap;
     gap: token('space', 'sm');
-    list-style: none; padding: 0; margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
 }
 
@@ -85,16 +91,26 @@
 }
 
 .games {
-  &__inner { @include container; padding-block: token('space', 'lg'); }
+  &__inner {
+    @include container;
+    padding-block: token('space', 'lg');
+  }
 
   &__grid {
-    list-style: none; padding: 0; margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: grid;
     gap: token('space', 'md');
     grid-template-columns: 1fr;
 
-    @include md { grid-template-columns: repeat(2, 1fr); gap: token('space', 'lg'); }
-    @include lg { grid-template-columns: repeat(3, 1fr); }
+    @include md {
+      grid-template-columns: repeat(2, 1fr);
+      gap: token('space', 'lg');
+    }
+    @include lg {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 }
 
@@ -102,16 +118,32 @@
   background: token('color', 'surface');
   border-radius: token('radius', 'lg');
   overflow: hidden;
-  box-shadow: 0 1px 2px rgba(30,33,64,.06);
-  transition: transform .15s, box-shadow .15s;
+  box-shadow: 0 1px 2px rgba(30, 33, 64, 0.06);
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
 
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(30,33,64,.10);
+    box-shadow: 0 8px 24px rgba(30, 33, 64, 0.1);
   }
 
-  &__img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; }
-  &__body { padding: token('space', 'md'); }
-  &__title { margin: 0 0 token('space', 'xs'); font-size: token('font', 'lg'); }
-  &__meta { margin: 0; color: token('color', 'text-muted'); font-size: token('font', 'sm'); }
+  &__img {
+    width: 100%;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+    display: block;
+  }
+  &__body {
+    padding: token('space', 'md');
+  }
+  &__title {
+    margin: 0 0 token('space', 'xs');
+    font-size: token('font', 'lg');
+  }
+  &__meta {
+    margin: 0;
+    color: token('color', 'text-muted');
+    font-size: token('font', 'sm');
+  }
 }

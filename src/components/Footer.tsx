@@ -16,7 +16,11 @@ export default function Footer() {
 
         <ul className="footer__links">
           {links.map((l) => (
-            <li key={l}><a href="#" className="pill-link">{l}</a></li>
+            <li key={l}>
+              <a href="#" className="pill-link">
+                {l}
+              </a>
+            </li>
           ))}
         </ul>
 

@@ -10,7 +10,13 @@
 
 body {
   margin: 0;
-  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-family:
+    'Poppins',
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
   font-size: token('font', 'base');
   color: token('color', 'text');
   background: token('color', 'bg');

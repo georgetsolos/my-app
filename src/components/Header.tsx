@@ -20,7 +20,9 @@ export default function Header({ onSignIn, user = null }: Props) {
     <header className="header">
       <div className="header__inner">
         <Link to="/" className="header__brand" onClick={closeMenu}>
-          <span className="header__logo" aria-hidden="true">▣</span>
+          <span className="header__logo" aria-hidden="true">
+            ▣
+          </span>
           MiniGames
         </Link>
 
@@ -37,14 +39,24 @@ export default function Header({ onSignIn, user = null }: Props) {
               <button className="header__user" type="button">
                 {user.name} <span aria-hidden="true">▾</span>
               </button>
-              <button className="btn btn--ghost" type="button">Log Out</button>
+              <button className="btn btn--ghost" type="button">
+                Log Out
+              </button>
             </>
           ) : (
             <>
-              <button className="btn btn--ghost" type="button" onClick={onSignIn}>
+              <button
+                className="btn btn--ghost"
+                type="button"
+                onClick={onSignIn}
+              >
                 Log In
               </button>
-              <button className="btn btn--primary" type="button" onClick={onSignIn}>
+              <button
+                className="btn btn--primary"
+                type="button"
+                onClick={onSignIn}
+              >
                 Sign Up
               </button>
             </>
@@ -69,23 +81,43 @@ export default function Header({ onSignIn, user = null }: Props) {
         aria-hidden={!menuOpen}
       >
         <nav className="header__drawer-nav" aria-label="Mobile">
-          <Link to="/" onClick={closeMenu}>Home</Link>
-          <Link to="/library" onClick={closeMenu}>Library</Link>
-          <Link to="/tournaments" onClick={closeMenu}>Tournaments</Link>
-          <Link to="/community" onClick={closeMenu}>Community</Link>
+          <Link to="/" onClick={closeMenu}>
+            Home
+          </Link>
+          <Link to="/library" onClick={closeMenu}>
+            Library
+          </Link>
+          <Link to="/tournaments" onClick={closeMenu}>
+            Tournaments
+          </Link>
+          <Link to="/community" onClick={closeMenu}>
+            Community
+          </Link>
         </nav>
 
         <div className="header__drawer-actions">
           {user ? (
-            <button className="btn btn--ghost" type="button" onClick={closeMenu}>
+            <button
+              className="btn btn--ghost"
+              type="button"
+              onClick={closeMenu}
+            >
               Log Out
             </button>
           ) : (
             <>
-              <button className="btn btn--ghost" type="button" onClick={openAuth}>
+              <button
+                className="btn btn--ghost"
+                type="button"
+                onClick={openAuth}
+              >
                 Log In
               </button>
-              <button className="btn btn--primary" type="button" onClick={openAuth}>
+              <button
+                className="btn btn--primary"
+                type="button"
+                onClick={openAuth}
+              >
                 Sign Up
               </button>
             </>

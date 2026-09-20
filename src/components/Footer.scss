@@ -14,31 +14,50 @@
     gap: token('space', 'md');
     padding-block: token('space', 'lg');
 
-    @include md { flex-direction: row; justify-content: space-between; }
+    @include md {
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   &__links {
-    display: flex; flex-wrap: wrap; gap: token('space', 'sm');
-    list-style: none; padding: 0; margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: token('space', 'sm');
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
 
   &__socials {
-    display: flex; gap: token('space', 'sm');
-    list-style: none; padding: 0; margin: 0;
+    display: flex;
+    gap: token('space', 'sm');
+    list-style: none;
+    padding: 0;
+    margin: 0;
 
     a {
       display: inline-flex;
-      width: 36px; height: 36px;
-      align-items: center; justify-content: center;
+      width: 36px;
+      height: 36px;
+      align-items: center;
+      justify-content: center;
       border-radius: 50%;
       background: token('color', 'accent');
       color: token('color', 'accent-contrast');
 
-      &:hover { background: token('color', 'primary'); color: token('color', 'primary-contrast'); }
+      &:hover {
+        background: token('color', 'primary');
+        color: token('color', 'primary-contrast');
+      }
     }
   }
 
-  &__icon { width: 16px; height: 16px; fill: currentColor; }
+  &__icon {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+  }
 }
 
 .pill-link {
@@ -49,7 +68,10 @@
   color: token('color', 'accent-contrast');
   font-size: token('font', 'sm');
   text-decoration: none;
-  transition: background .15s;
+  transition: background 0.15s;
 
-  &:hover { background: token('color', 'primary'); color: token('color', 'primary-contrast'); }
+  &:hover {
+    background: token('color', 'primary');
+    color: token('color', 'primary-contrast');
+  }
 }
