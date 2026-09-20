@@ -1,0 +1,50 @@
+@use '../styles/tokens' as *;
+@use '../styles/breakpoints' as *;
+@use '../styles/button';
+
+.dev-cta {
+  &__inner {
+    @include container;
+    padding-block: token('space', 'xl');
+  }
+
+  &__card {
+    background: token('color', 'accent');
+    color: token('color', 'accent-contrast');
+    border-radius: token('radius', 'lg');
+    padding: token('space', 'xl');
+    display: flex;
+    flex-direction: column;
+    gap: token('space', 'lg');
+    text-align: center;
+    align-items: center;
+
+    @include md {
+      flex-direction: row;
+      text-align: left;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: token('space', 'sm');
+  }
+
+  &__title {
+    margin: 0;
+    font-size: token('font', 'xl');
+
+    @include md {
+      font-size: token('font', '2xl');
+    }
+  }
+
+  &__text {
+    margin: 0;
+    opacity: 0.85;
+    max-width: 40ch;
+  }
+}
