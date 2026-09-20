@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Carousel from '../components/Carousel';
 import Leaderboard from '../components/Leaderboard';
+import DevCta from '../components/DevCta';
 import { games } from '../data/games';
 
 type Props = { onSignIn: () => void };
@@ -75,6 +76,8 @@ export default function Home({ onSignIn }: Props) {
       </section>
 
       <Leaderboard />
+
+      <DevCta />
 
       <Footer />
     </main>
